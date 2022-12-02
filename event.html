@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <button id="box">click me</button>
+    <p id="value"></p>
+    </div>
+    <div>
+        <input id="textBox" type="text" />
+        <div id="output"></div>
+    </div>
+    <script>
+        var ref=document.getElementById("box");
+        var x=ref.addEventListener("click",displayName);
+        ref.addEventListener("click",myAlert);
+        
+        function displayName(){
+            document.getElementById("value").textContent="ruban";
+        }
+        function myAlert(){
+            alert("welcomes you");
+        }
+        const textBox=document.querySelector("#textBox");
+        const output=document.querySelector("#output");
+        textBox.addEventListener('keydown',(event)=>output.textContent=`you pressed "${event.key}"`);
+    </script>
+</body>
+</html>
