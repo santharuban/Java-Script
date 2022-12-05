@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myobject={
+            name:"Ram",
+            greet(){
+                console.log(`greetings from ${this.name}`);
+            }
+        }
+        myobject.greet();
+
+        function person(firstname,lastname,age){
+            this.fname=firstname;
+            this.lname=lastname;
+            this.age=age;
+        }
+        // allow new methods to object constructor
+        person.prototype.nationality="tamil";
+        const myfather=new person("jack","son",45);
+        document.write("The nationality of myfather is" + myfather.nationality);
+        // ***************************************
+        // Using the Object.create
+        const personPrototype={
+            greet(){
+                console.log("hello");
+            }
+        }
+        const car=Object.create(personPrototype);
+        car.greet();
+
+    </script>
+</body>
+</html>
